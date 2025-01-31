@@ -1,6 +1,7 @@
 # cpp-match
 Simple match expression for c++, since it hasnt been added yet.
 
+To add to your project, just copy the file into some folder like "ext/"
 
 ```cpp
 
@@ -54,6 +55,8 @@ inline void test2()
 }
 
 ```
+The return types of the cases must be identical.
+The compiler will add the return type itself, so using "-> Type" is optional, but required in some cases
 ```cpp
 
 #include <iostream>
@@ -61,11 +64,6 @@ inline void test2()
 consteval int test3()
 {
 	std::variant<int, bool> v{ 0 };
-
-	// The return type of the cases must be identical!
-
-	// The compiler will try to guess it, so you
-	// might need to explicitly state it using "-> Type")
 
 	return ezmatch(v)(
 		varcase(int) -> char { return 1; },
