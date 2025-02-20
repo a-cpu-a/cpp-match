@@ -3,6 +3,8 @@ Simple match expression for c++, since it hasnt been added yet.
 
 To add to your project, just copy the file into some folder like "ext/"
 
+Note: you need to add `const` and `&`/`&&` yourself
+
 ```cpp
 
 #include <iostream>
@@ -46,7 +48,7 @@ inline void test2()
 		varcase(MyEnumType::INT) { std::cout<<"Int "<< var <<"\n"; },
 		varcase(double) { std::cout<<"Double "<< var <<"\n";},
 
-		varcase(MyEnumType::STRNUM) {
+		varcase(const MyEnumType::STRNUM&) {
 			std::cout <<"Strnum "<< var.str 
 				<<" N: "<< var.num <<"\n";
 		}
