@@ -38,7 +38,7 @@ _EzMatchOverloader(Ts...) -> _EzMatchOverloader<Ts...>;
 
 // Macro Definitions
 #define ezmatch(_VALUE) [&](auto... ez_cases) \
-		{ return std::visit(_EzMatchOverloader{ez_cases...}, _VALUE); }
+		{ return ::std::visit(::_EzMatchOverloader{ez_cases...}, _VALUE); }
 
 //Note: you need to add const and &/&& yourself
 
